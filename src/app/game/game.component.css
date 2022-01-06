@@ -1,0 +1,74 @@
+body {
+	font-family: poppins;
+	background-image: url(https://wallpaperaccess.com/full/712990.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-color: #f9f9f9;
+	padding-bottom: 20px;
+}
+
+.container-fluid {
+	margin: 0px;
+}
+
+
+h3 {
+	color: white;
+	font-size: 5vw;
+	margin-bottom: 20px;
+}
+
+
+
+a {
+	color: #053462;
+	text-decoration-style: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+.card {
+	padding: 2em;
+	margin-top: 20px;
+	border-radius: 20px;
+	border: solid 1px #ececec;
+	background-color: rgba(244, 244, 244, 0.80);
+}
+
+h1 {
+	padding: 10px 20px;
+	background-color: #053462;
+	color: white;
+	margin-bottom: 50px;
+}
+
+.icon {
+	color: #053462;
+	font-size: 20px;
+	margin-right: 10px;
+	border-radius: 50%;
+}
+
+p.game-content {
+	text-align: justify;
+}
+
+p.rewards {
+	font-size: 18px;
+	font-weight: bold;
+	background-color: #b1ddfd;
+	padding: 20px 20px;
+	margin-bottom: 10px;
+	border: none;
+	text-align: left;
+}
+
+p.rewards:hover {
+	font-size: 18px;
+	font-weight: bold;
+	background-color: #f9f9f9;
+	border: none;
+}
+
