@@ -7,33 +7,494 @@
     <div class="row">
         <div class="col-md-3 text-center">
             <div class="card">
-                <h2><i class="fas fa-coins"></i>Money &nbsp;&nbsp;&nbsp;<span>XXXX</span></h2>
+                <h2><i class="fas fa-coins"></i>Money &nbsp;&nbsp;&nbsp;<span>{{money}}</span></h2>
                 <h1>Leaderboard</h1>
                 <p class="rewards"><a href="" data-toggle="modal" data-target="#retweets"><i
-                            class="fa fa-retweet icon"></i> <span>Retweets ($200)</span></a></p>
+                            class="fa fa-retweet icon"></i> <span>Retweets ({{ retweets }})</span></a></p>
                 <p class="rewards"><a href="" data-toggle="modal" data-target="#likes"><i
-                            class="far fa-thumbs-up icon"></i> <span>Likes ($200)</span></a></p>
+                            class="far fa-thumbs-up icon"></i> <span>Likes ({{ likes }})</span></a></p>
                 <p class="rewards"><a href="" data-toggle="modal" data-target="#comments"><i
-                            class="far fa-comment icon"></i> <span>Comments ($200)</span></a></p>
+                            class="far fa-comment icon"></i> <span>Comments ({{ comments }})</span></a></p>
                 <p class="rewards"><a href="" data-toggle="modal" data-target="#followers"><i
-                            class="far fa-users icon"></i> <span>Followers ($200)</span></a></p>
+                            class="far fa-users icon"></i> <span>Followers ({{ followers }})</span></a></p>
                 <p class="rewards"><a href="" data-toggle="modal" data-target="#share"><i class="far fa-share icon"></i>
-                        <span>Share ($200)</span></a></p>
+                        <span>Share ({{ share }})</span></a></p>
                 <p class="rewards"><a href="" data-toggle="modal" data-target="#views"><i class="far fa-eye icon"></i>
-                        <span>Views ($200)</span></a></p>
+                        <span>Views ({{ views }})</span></a></p>
                 <p class="rewards"><a href="" data-toggle="modal" data-target="#repost"><i
-                            class="fa fa-retweet icon"></i> <span>Repost ($200)</span></a></p>
+                            class="fa fa-retweet icon"></i> <span>Repost ({{repost}})</span></a></p>
             </div>
         </div>
         <div class="col-md-6 border borber-success text-center">
             <div class="card">
                 <h1>Live Game</h1>
-                <p *ngIf="true" class="game-content">Your job is spread fake news many people as much as possible. Are ready for this challenge?
-                    <button style='font-size:24px'>Button <i class='fas fa-arrow-right'></i></button>
-                </p>
 
-                <p class="game-content">Your job is spread fake news many people as much as possible. Are ready for this challenge?</p>
-                
+                <span #messageEl *ngIf="check ==1" class="game-content" [attr.data-message-id]=1>
+                    Start by posting something that will get people talking. Something that will make emotions flare,
+                    people frustrated, afraid or angry.
+
+                    <p><button style='font-size:24px' class="btn btn-primary" (click)="nextGame(messageEl, 0, 0)">Lets
+                            Go
+                            <i class='fas fa-arrow-right'></i></button></p>
+                </span>
+
+                <span #messageEl *ngIf="check == 2" class="game-content" [attr.data-message-id]=2>
+                    Your job is spread fake news many people as much as possible. Are ready for this challenge?
+                    <p><button style='font-size:24px' class="btn btn-primary" (click)="nextGame(messageEl, 0, 0)">next
+                            <i class='fas fa-arrow-right'></i></button></p>
+                </span>
+
+                <span #messageEl *ngIf="check == 3" class="game-content" [attr.data-message-id]=3>
+                    <ul>
+                        <li>
+                            <h2>What do you think about this topics?</h2>
+                        </li>
+                    </ul>
+                    <p>Choose one</p>
+                    <div class="row">
+                        <div class="col-sm-3"><button type="button" class="btn btn-success"
+                                (click)="nextGame(messageEl, 1, 0)">Post about COVID 19
+                            </button></div>
+                        <div class="col-sm-5"><button type="button" class="btn btn-primary"
+                                (click)="nextGame(messageEl, 2, 0)">Post about privacy concerns
+                                in the country
+                            </button></div>
+                        <div class="col-sm-4"><button type="button" class="btn btn-info"
+                                (click)="nextGame(messageEl, 3, 0)">Post about health and babies
+                            </button></div>
+                    </div>
+                </span>
+
+                <span #messageEl *ngIf="check == 4" class="game-content" [attr.data-message-id]=4>
+                    <div class="row">
+                        <div *ngIf="option == 1" class="row">
+                            <div class="col-sm-6"> The Government believes that dogs and other pets can cause
+                                Covid19. They are trying to take your pets/friends away.
+                            </div>
+                            <div class="col-sm-6">[70% of American household owned one or more pets, they believe
+                                that they stand by our side when people break up with us. They comfort us when loved
+                                ones pass on. This news will definitely get people angry, but they will be skeptical
+                                because it is not from a credible source]
+                            </div>
+                            <div class="col-sm-4"><button type="button" class="btn btn-info"
+                                    (click)="nextGame(messageEl, 1, 0)">Next
+                                </button></div>
+                        </div>
+                        <div *ngIf="option == 2" class="row">
+                            <div class="col-sm-6"> The Government is spying on us? A young technology intern at the
+                                Pentagon (name withheld). Stumbled on a video of top government official discussing a
+                                massive military operation to install listening chips and cameras in our homes. This is
+                                outrageous.. Let us also protect the pentagon whistleblower
+                            </div>
+                            <div class="col-sm-6">[97% of Americans do not approve of Government’s privacy policies.
+                                This News will make emotions flare. People might consider the news a bit trustworthy
+                                because of the whistleblower but a source will make it more credible]
+                            </div>
+                            <div class="col-sm-4"><button type="button" class="btn btn-info"
+                                    (click)="nextGame(messageEl, 2, 0)">Next
+                                </button></div>
+                        </div>
+                        <div *ngIf="option == 3" class="row">
+                            <div class="col-sm-6"> Be care at your OBG/YN, the Government are injecting chips into
+                                pregnant women and babies inside them. They will decide which baby can be born or not.
+                                Protect our women.
+                            </div>
+                            <div class="col-sm-6">[Almost half of the country believe that abortion should illegal. This
+                                news will definitely get people angry, but they will be skeptical because it is not from
+                                a credible source]
+                            </div>
+                            <div class="col-sm-4"><button type="button" class="btn btn-info"
+                                    (click)="nextGame(messageEl, 3, 0)">Next
+                                </button></div>
+                        </div>
+                    </div>
+                </span>
+
+                <span #messageEl *ngIf="check == 5" class="game-content" [attr.data-message-id]=5>
+                    <div class="row">
+                        <div *ngIf="option == 1" class="row">
+                            <h5>About Covid19</h5>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <img src="../assets/Picture1.png"
+                                        class="img-responsive center-block d-block mx-auto" align="center">
+                                </div>
+                            </div>
+                            <p><button type="button" class="btn btn-primary"
+                                    (click)="nextGame(messageEl, 1, 0)">Next</button></p>
+                        </div>
+                        <div *ngIf="option == 2" class="row">
+                            <h5> About privacy concerns</h5>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <img src="../assets/Picture2.png"
+                                        class="img-responsive center-block d-block mx-auto" align="center">
+                                </div>
+                            </div>
+                            <p><button type="button" class="btn btn-primary"
+                                    (click)="nextGame(messageEl, 2, 0)">Next</button></p>
+                        </div>
+                        <div *ngIf="option == 3" class="row">
+                            <h5> About health and babies</h5>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <img src="../assets/Picture3.png"
+                                        class="img-responsive center-block d-block mx-auto" align="center">
+                                </div>
+                            </div>
+                            <p><button type="button" class="btn btn-primary"
+                                    (click)="nextGame(messageEl, 3, 0)">Next</button></p>
+                        </div>
+                    </div>
+                </span>
+
+                <span #messageEl *ngIf="check == 6" class="game-content" [attr.data-message-id]=6>
+                    <div class="row">
+                        <div *ngIf="option == 1" class="row">
+                            <h5>This is what people think about the post on covid</h5>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <img src="../assets/Picture4.png"
+                                        class="img-responsive center-block d-block mx-auto" align="center">
+                                </div>
+                                <div class="col-sm-6">
+                                    <img src="../assets/Picture5.png"
+                                        class="img-responsive center-block d-block mx-auto" align="center">
+                                </div>
+                                <div class="col-sm-6">
+                                    <img src="../assets/Picture6.png"
+                                        class="img-responsive center-block d-block mx-auto" align="center">
+                                </div>
+                            </div>
+                            <p><button type="button" class="btn btn-primary"
+                                    (click)="nextGame(messageEl, 0, 0)">Next</button></p>
+                        </div>
+
+                        <div *ngIf="option == 2" class="row">
+                            <h5> This is what people think about the post privacy</h5>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <img src="../assets/Picture7.png"
+                                        class="img-responsive center-block d-block mx-auto" align="center">
+                                </div>
+                                <div class="col-sm-6">
+                                    <img src="../assets/Picture8.png"
+                                        class="img-responsive center-block d-block mx-auto" align="center">
+                                </div>
+                            </div>
+                            <p><button type="button" class="btn btn-primary"
+                                    (click)="nextGame(messageEl, 0, 0)">Next</button></p>
+                        </div>
+
+                        <div *ngIf="option == 3" class="row">
+                            <h5> This is what people think about the post on babies health </h5>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <img src="../assets/Picture9.png"
+                                        class="img-responsive center-block d-block mx-auto" align="center">
+                                </div>
+                                <div class="col-sm-6">
+                                    <img src="../assets/Picture10.png"
+                                        class="img-responsive center-block d-block mx-auto" align="center">
+                                </div>
+                            </div>
+                            <p><button type="button" class="btn btn-primary"
+                                    (click)="nextGame(messageEl, 0, 0)">Next</button></p>
+                        </div>
+                    </div>
+                </span>
+
+                <span #messageEl *ngIf="check == 7" class="game-content" [attr.data-message-id]=7>
+                    A 2016 Pew study found that nearly a quarter of adults admit to sharing fake news in the past. Most
+                    didn't know it was fake when they shared it.(from connectsafely)
+
+                    <p><button style='font-size:24px' class="btn btn-primary" (click)="nextGame(messageEl, 0, 0)">next
+                            <i class='fas fa-arrow-right'></i></button></p>
+                </span>
+
+                <span #messageEl *ngIf="check == 8" class="game-content" [attr.data-message-id]=8>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            From the points you have gained, some folks are falling for your Fake News. But how can we
+                            attract more attention?
+                        </div>
+                        <div class="col-sm-6">
+                            <caption>Collage of reactions</caption>
+                            <img src="../assets/Picture11.png" class="img-responsive center-block d-block mx-auto"
+                                align="center">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-5"><button type="button" class="btn btn-success"
+                                (click)="nextGame(messageEl, 1, 0)">Create Some commercials and ads to publicize the
+                                News
+                            </button></div>
+                        <div class="col-sm-5"><button type="button" class="btn btn-primary"
+                                (click)="nextGame(messageEl, 2, 0)">Create some social Bots
+                            </button></div>
+                        <div class="col-sm-2"><button type="button" class="btn btn-primary"
+                                (click)="nextGame(messageEl, 3, 0)">No
+                            </button></div>
+                    </div>
+                </span>
+                <span #messageEl *ngIf="check == 9" class="game-content" [attr.data-message-id]=9>
+                    <div *ngIf="option == 2" class="row">
+                        <h5>Create social Bot </h5>
+                        <p><button type="button" class="btn btn-primary"
+                                (click)="nextGame(messageEl, 2, 0)">Next</button>
+                        </p>
+                    </div>
+                </span>
+
+                <span #messageEl *ngIf="check == 10" class="game-content" [attr.data-message-id]=10>
+                    <div *ngIf="option == 2" class="row">
+                        <div class="col-sm-6"><button type="button" class="btn btn-success"
+                                (click)="nextGame(messageEl, 1, 0)">Employ a hacker to hack News
+                                organizations and journalist accounts
+                            </button>
+                        </div>
+                        <div class="col-sm-6">
+                            <button type="button" class="btn btn-primary" (click)="nextGame(messageEl, 2, 0)">Employ a
+                                programmer to
+                                create bot accounts for you
+                            </button>
+                        </div>
+                    </div>
+                </span>
+
+                <span #messageEl *ngIf="check == 11" class="game-content" [attr.data-message-id]=11>
+                    <div *ngIf="option == 1" class="row">
+                        <div class="col-sm-6">
+                            <h6>Employ a hacker to hack News organizations and journalist accounts :will you do after
+                                access?</h6>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <button type="button" class="btn btn-success"
+                                        (click)="nextGame(messageEl, 3, 1000)">Create content to post on their page
+                                    </button>
+                                </div>
+                                <div class="col-sm-4">
+                                    <button type="button" class="btn btn-success"
+                                        (click)="nextGame(messageEl, 1, 1000)">Take
+                                        responsibility for the hack to show how weak their internet security is?
+                                    </button>
+                                </div>
+                                <div class="col-sm-4">
+                                    <button type="button" class="btn btn-success"
+                                        (click)="nextGame(messageEl, 2, 1000)">Download sources of news, reporters'
+                                        passwords,
+                                        users' credentials
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="option == 2" class="row">
+                        <div class="col-sm-6"><button type="button" class="btn btn-success">Employ a programmer to
+                                create bot accounts for you
+                            </button>
+                            <p><button type="button" class="btn btn-primary"
+                                    (click)="nextGame(messageEl, 2, 0)">Next</button>
+                            </p>
+                        </div>
+                    </div>
+                </span>
+
+                <span #messageEl *ngIf="check == 12" class="game-content" [attr.data-message-id]=12>
+                    <!-- <div *ngIf="option == 1" class="row">
+                        <div class="col-sm-6"><button type="button" class="btn btn-success">Employ a hacker to hack News
+                                organizations and journalist accounts
+                            </button>
+                            <p><button type="button" class="btn btn-primary" (click)="nextGame(messageEl, 1)">Next</button>
+                            </p>
+                        </div>
+                    </div> -->
+                    <div *ngIf="option == 2" class="row">
+                        <h5>Create multiple post, likes and retweets on social media</h5>
+                        <div class="col-sm-6"><button type="button" class="btn btn-success">I will provide that (put
+                                dummy ones)
+                            </button>
+                            <p><button type="button" class="btn btn-primary"
+                                    (click)="nextGame(messageEl, 2, 0)">Next</button>
+                            </p>
+                        </div>
+                    </div>
+                </span>
+                <span #messageEl *ngIf="check == 13" class="game-content" [attr.data-message-id]=13>
+                    <!-- <div *ngIf="option == 1" class="row">
+                        <div class="col-sm-6"><button type="button" class="btn btn-success">Employ a hacker to hack News
+                                organizations and journalist accounts
+                            </button>
+                            <p><button type="button" class="btn btn-primary" (click)="nextGame(messageEl, 1)">Next</button>
+                            </p>
+                        </div>
+                    </div> -->
+                    <div *ngIf="option == 2" class="row">
+                        <h5>Create multiple post, likes and retweets on social media</h5>
+                        <div class="col-sm-6"><button type="button" class="btn btn-success">Ask your followers to fill
+                                forms about some news items to collect their email address and phone numbers.
+                                I will provide that (put dummy ones)
+                            </button>
+                            <p><button type="button" class="btn btn-primary"
+                                    (click)="nextGame(messageEl, 2, 0)">Next</button>
+                            </p>
+                        </div>
+                    </div>
+                </span>
+
+                <span #messageEl *ngIf="check == 1000" class="game-content" [attr.data-message-id]=13>
+                    <div *ngIf="option == 1" class="row">
+                        <h5>Take responsibility for the hack to show how weak their internet security is?</h5>
+                        <div class="col-sm-6"><button type="button" class="btn btn-success">I will create a post (on SM)
+                                showing responsibility
+
+                            </button>
+                            <p><button type="button" class="btn btn-primary"
+                                    (click)="nextGame(messageEl, 1, 14)">Next</button>
+                            </p>
+                        </div>
+                    </div>
+                    <div *ngIf="option == 2" class="row">
+                        <h5>Download sources of news, reporters' passwords, users' credentials </h5>
+                        <div class="col-sm-6"><button type="button" class="btn btn-success">I will create a post (on SM)
+                                showing responsibility
+                            </button>
+                            <p><button type="button" class="btn btn-primary"
+                                    (click)="nextGame(messageEl, 2, 14)">Next</button>
+                            </p>
+                        </div>
+                    </div>
+                    <div *ngIf="option == 3" class="row">
+                        <h5>Create content to post on their page</h5>
+                        <div class="col-sm-6"><button type="button" class="btn btn-success">I will create a post (on SM)
+                                showing responsibility
+                            </button>
+                            <p><button type="button" class="btn btn-primary"
+                                    (click)="nextGame(messageEl, 2, 14)">Next</button>
+                            </p>
+                        </div>
+                    </div>
+                </span>
+
+                <span #messageEl *ngIf="check == 14" class="game-content" [attr.data-message-id]=14>
+                    Some investigative journalists and News organizations are rejecting your story to. I suggest you
+                    attack them. How?
+                    <p><button style='font-size:24px' class="btn btn-primary" (click)="nextGame(messageEl, 0, 0)">Next
+                            <i class='fas fa-arrow-right'></i></button></p>
+                </span>
+
+                <span #messageEl *ngIf="check == 15" class="game-content" [attr.data-message-id]=15>
+                    <div class="row">
+                        <h5>The CAI, LAPD, US Surgeon General and NY city Health commissioner all debunked the stories
+                            attributed to them e.g
+                        </h5>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <img src="../assets/Picture12.png" class="img-responsive center-block d-block mx-auto"
+                                    align="center">
+                            </div>
+                        </div>
+                        <p><button type="button" class="btn btn-primary"
+                                (click)="nextGame(messageEl, 1, 0)">Next</button></p>
+                    </div>
+                </span>
+
+                <span #messageEl *ngIf="check == 16" class="game-content" [attr.data-message-id]=16>
+                    <div *ngIf="option == 1" class="row">
+                        <h6>So, what do you want to do?</h6>
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <button type="button" class="btn btn-success" (click)="nextGame(messageEl, 3, 0)">Focus
+                                    on the story and create more News about the topic
+                                </button>
+                            </div>
+                            <div class="col-sm-2">
+                                <button type="button" class="btn btn-success" (click)="nextGame(messageEl, 1, 0)">Attack
+                                    back?
+
+                                </button>
+                            </div>
+                            <div class="col-sm-2">
+                                <button type="button" class="btn btn-success" (click)="nextGame(messageEl, 2, 0)">Do
+                                    nothing
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </span>
+
+                <span #messageEl *ngIf="check == 17" class="game-content" [attr.data-message-id]=17>
+                    <h5>Create clickbait stories</h5>
+                    <p>Good choice, though it might lead to short term win because people will eventually know that the
+                        story is fake.
+                    </p>
+                    <p><button style='font-size:24px' class="btn btn-primary" (click)="nextGame(messageEl, 0, 0)">CLICK:
+                            LET’S GO….
+
+                            <i class='fas fa-arrow-right'></i></button></p>
+                </span>
+
+                <span #messageEl *ngIf="check == 18" class="game-content" [attr.data-message-id]=18>
+                    <h6>So, what do you want to do?</h6>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <button type="button" class="btn btn-success" (click)="nextGame(messageEl, 2, 0)">Focus
+                                Create provocative and vague headline?
+                            </button>
+                        </div>
+                        <div class="col-sm-6">
+                            <button type="button" class="btn btn-success" (click)="nextGame(messageEl, 1, 0)">True
+                                story headline
+                            </button>
+                        </div>
+                    </div>
+                </span>
+
+                <span #messageEl *ngIf="check == 19" class="game-content" [attr.data-message-id]=19>
+                    <div *ngIf="option == 1" class="row">
+                        <h5>True story headline </h5>
+                        <div class="col-sm-4">People may not fall for this. You need to create a headline that is
+                            outrageous enough for people to want to click on
+                        </div>
+                        <div class="col-sm-4">Its true that COVID 19 vaccine protects adults and children</div>
+                        <div class="col-sm-4">The Government might truly not be spying on us, but we would never know
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-primary"
+                                (click)="nextGame(messageEl, 2, 19)">Next</button>
+                        </div>
+                    </div>
+                    <div *ngIf="option == 2" class="row">
+                        <h5>Create provocative and vague headline?</h5>
+                        <div class="col-sm-4">Just take this pill and you will give birth without pain. Click to find
+                            out
+                        </div>
+                        <div class="col-sm-4">10-year-old saw something unbelievable in his Police dad office. Click to
+                            find out </div>
+                        <div class="col-sm-4">You will not believe what the CAI director said to his agents? Click to
+                            find out
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-primary"
+                                (click)="nextGame(messageEl, 0, 0)">Next</button>
+                        </div>
+                    </div>
+                </span>
+
+                <!-- <span #messageEl *ngIf="check == 1000" class="game-content" [attr.data-message-id]=9>
+                    <div class="row">
+                        <h1>Create social Bot </h1>
+                    </div>
+                    <p><button type="button" class="btn btn-primary" (click)="nextGame(messageEl, 0)">Next</button></p>
+                </span> -->
+
+                <!-- <span #messageEl *ngIf="check == 2000" class="game-content" [attr.data-message-id]=9>
+                    <div class="row">
+                        <h1>Create social Bot </h1>
+                    </div>
+                    <p><button type="button" class="btn btn-primary" (click)="nextGame(messageEl, 0)">Next</button></p>
+                </span> -->
+
             </div>
         </div>
         <div class="col-md-3 text-center">
