@@ -301,19 +301,18 @@
                 </span>
 
                 <span #messageEl *ngIf="check == 12" class="game-content" [attr.data-message-id]=12>
-                    <!-- <div *ngIf="option == 1" class="row">
-                        <div class="col-sm-6"><button type="button" class="btn btn-success">Employ a hacker to hack News
-                                organizations and journalist accounts
-                            </button>
-                            <p><button type="button" class="btn btn-primary" (click)="nextGame(messageEl, 1)">Next</button>
-                            </p>
-                        </div>
-                    </div> -->
                     <div *ngIf="option == 2" class="row">
                         <h5>Create multiple post, likes and retweets on social media</h5>
-                        <div class="col-sm-6"><button type="button" class="btn btn-success">I will provide that (put
-                                dummy ones)
-                            </button>
+                        <div class="col-sm-6">
+                            <div class="col-sm-6">
+                                <img src="../assets/Picture27.png" class="img-responsive center-block d-block mx-auto"
+                                    align="center">
+                            </div>
+                            <div class="col-sm-6">
+                                <img src="../assets/Picture27.png" class="img-responsive center-block d-block mx-auto"
+                                    align="center">
+                            </div>
+
                             <p><button type="button" class="btn btn-primary"
                                     (click)="nextGame(messageEl, 2, 0)">Next</button>
                             </p>
@@ -321,20 +320,17 @@
                     </div>
                 </span>
                 <span #messageEl *ngIf="check == 13" class="game-content" [attr.data-message-id]=13>
-                    <!-- <div *ngIf="option == 1" class="row">
-                        <div class="col-sm-6"><button type="button" class="btn btn-success">Employ a hacker to hack News
-                                organizations and journalist accounts
-                            </button>
-                            <p><button type="button" class="btn btn-primary" (click)="nextGame(messageEl, 1)">Next</button>
-                            </p>
-                        </div>
-                    </div> -->
                     <div *ngIf="option == 2" class="row">
                         <h5>Create multiple post, likes and retweets on social media</h5>
-                        <div class="col-sm-6"><button type="button" class="btn btn-success">Ask your followers to fill
+                        <div class="col-sm-6">
+                            <!-- <button type="button" class="btn btn-success">Ask your followers to fill
                                 forms about some news items to collect their email address and phone numbers.
                                 I will provide that (put dummy ones)
-                            </button>
+                            </button> -->
+                            <div class="col-sm-6">
+                                <img src="../assets/Picture26.png" class="img-responsive center-block d-block mx-auto"
+                                    align="center">
+                            </div>
                             <p><button type="button" class="btn btn-primary"
                                     (click)="nextGame(messageEl, 2, 0)">Next</button>
                             </p>
@@ -345,10 +341,18 @@
                 <span #messageEl *ngIf="check == 1000" class="game-content" [attr.data-message-id]=13>
                     <div *ngIf="option == 1" class="row">
                         <h5>Take responsibility for the hack to show how weak their internet security is?</h5>
-                        <div class="col-sm-6"><button type="button" class="btn btn-success">I will create a post (on SM)
+                        <div class="col-sm-6">
+                            <!-- <button type="button" class="btn btn-success">I will create a post (on SM)
                                 showing responsibility
-
-                            </button>
+                            </button> -->
+                            <div class="col-sm-6">
+                                <img src="../assets/Picture29.png" class="img-responsive center-block d-block mx-auto"
+                                    align="center">
+                            </div>
+                            <div class="col-sm-6">
+                                <img src="../assets/Picture30.png" class="img-responsive center-block d-block mx-auto"
+                                    align="center">
+                            </div>
                             <p><button type="button" class="btn btn-primary"
                                     (click)="nextGame(messageEl, 1, 14)">Next</button>
                             </p>
@@ -356,19 +360,34 @@
                     </div>
                     <div *ngIf="option == 2" class="row">
                         <h5>Download sources of news, reporters' passwords, users' credentials </h5>
-                        <div class="col-sm-6"><button type="button" class="btn btn-success">I will create a post (on SM)
+                        <div class="col-sm-6">
+                            <!-- <button type="button" class="btn btn-success">I will create a post (on SM)
                                 showing responsibility
-                            </button>
-                            <p><button type="button" class="btn btn-primary"
+                            </button> -->
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <img src="../assets/Picture31.png"
+                                        class="img-responsive center-block d-block mx-auto" align="center">
+                                </div>
+                            </div>
+                            <p>
+                                <button type="button" class="btn btn-primary"
                                     (click)="nextGame(messageEl, 2, 14)">Next</button>
                             </p>
                         </div>
                     </div>
                     <div *ngIf="option == 3" class="row">
                         <h5>Create content to post on their page</h5>
-                        <div class="col-sm-6"><button type="button" class="btn btn-success">I will create a post (on SM)
+                        <div class="col-sm-6">
+                            <!-- <button type="button" class="btn btn-success">I will create a post (on SM)
                                 showing responsibility
-                            </button>
+                            </button> -->
+                            <div class="col-sm-6">
+                                <div class="row">
+                                    <img src="../assets/Picture32.png"
+                                        class="img-responsive center-block d-block mx-auto" align="center">
+                                </div>
+                            </div>
                             <p><button type="button" class="btn btn-primary"
                                     (click)="nextGame(messageEl, 2, 14)">Next</button>
                             </p>
@@ -379,8 +398,10 @@
                 <span #messageEl *ngIf="check == 14" class="game-content" [attr.data-message-id]=14>
                     Some investigative journalists and News organizations are rejecting your story to. I suggest you
                     attack them. How?
-                    <p><button style='font-size:24px' class="btn btn-primary" (click)="nextGame(messageEl, 0, 0)">Next
-                            <i class='fas fa-arrow-right'></i></button></p>
+                    <p>
+                        <button style='font-size:24px' class="btn btn-primary" (click)="nextGame(messageEl, 0, 0)">Next
+                            <i class='fas fa-arrow-right'></i></button>
+                    </p>
                 </span>
 
                 <span #messageEl *ngIf="check == 15" class="game-content" [attr.data-message-id]=15>
@@ -454,8 +475,21 @@
                         <h5>True story headline </h5>
                         <div class="col-sm-4">People may not fall for this. You need to create a headline that is
                             outrageous enough for people to want to click on
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <img src="../assets/Picture33.png"
+                                        class="img-responsive center-block d-block mx-auto" align="center">
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-sm-4">Its true that COVID 19 vaccine protects adults and children</div>
+                        <div class="col-sm-4">Its true that COVID 19 vaccine protects adults and children
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <img src="../assets/Picture34.png"
+                                        class="img-responsive center-block d-block mx-auto" align="center">
+                                </div>
+                            </div>
+                        </div>
                         <div class="col-sm-4">The Government might truly not be spying on us, but we would never know
                         </div>
                         <div>
@@ -465,13 +499,44 @@
                     </div>
                     <div *ngIf="option == 2" class="row">
                         <h5>Create provocative and vague headline?</h5>
-                        <div class="col-sm-4">Just take this pill and you will give birth without pain. Click to find
+                        <div class="col-sm-3">
+                            Just take this pill and you will give birth without pain. Click to find
                             out
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <img src="../assets/Picture35.png"
+                                        class="img-responsive center-block d-block mx-auto" align="center">
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-sm-4">10-year-old saw something unbelievable in his Police dad office. Click to
-                            find out </div>
-                        <div class="col-sm-4">You will not believe what the CAI director said to his agents? Click to
+                        <div class="col-sm-3">
+                            10-year-old saw something unbelievable in his Police dad office. Click to
                             find out
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <img src="../assets/Picture36.png"
+                                        class="img-responsive center-block d-block mx-auto" align="center">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            You will not believe what the CAI director said to his agents? Click to
+                            find out
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <img src="../assets/Picture37.png"
+                                        class="img-responsive center-block d-block mx-auto" align="center">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            Participate or die. Local Sheriff tells his deputies. Click to find out
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <img src="../assets/Picture38.png"
+                                        class="img-responsive center-block d-block mx-auto" align="center">
+                                </div>
+                            </div>
                         </div>
                         <div>
                             <button type="button" class="btn btn-primary"
@@ -493,7 +558,26 @@
                 <span #messageEl *ngIf="check == 21" class="game-content" [attr.data-message-id]=21>
                     <div class="row">
                         <h5>What people are saying about the posts Create provocative and vague headline</h5>
-                        <div class="col-sm-8">I will create the posts …</div>
+                        <div class="col-sm-8">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <img src="../assets/Picture39.png"
+                                        class="img-responsive center-block d-block mx-auto" align="center">
+                                </div>
+                                <div class="col-sm-6">
+                                    <img src="../assets/Picture40.png"
+                                        class="img-responsive center-block d-block mx-auto" align="center">
+                                </div>
+                                <div class="col-sm-6">
+                                    <img src="../assets/Picture41.png"
+                                        class="img-responsive center-block d-block mx-auto" align="center">
+                                </div>
+                                <div class="col-sm-6">
+                                    <img src="../assets/Picture42.png"
+                                        class="img-responsive center-block d-block mx-auto" align="center">
+                                </div>
+                            </div>
+                        </div>
                         <div>
                             <button type="button" class="btn btn-primary"
                                 (click)="nextGame(messageEl, 0, 0)">Next</button>
@@ -556,15 +640,33 @@
                 <span #messageEl *ngIf="check == 24" class="game-content" [attr.data-message-id]=24>
                     <div *ngIf="option == 5" class="row">
                         <h5>Post</h5>
-                        <div class="col-sm-6">fear message (I will provide it)
-                            <p><button type="button" class="btn btn-primary"
+                        <div class="col-sm-6">Fear message
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <img src="../assets/Picture43.png"
+                                        class="img-responsive center-block d-block mx-auto" align="center">
+                                </div>
+                                <div class="col-sm-6">
+                                    <img src="../assets/Picture44.png"
+                                        class="img-responsive center-block d-block mx-auto" align="center">
+                                </div>
+                            </div>
+                            <p>
+                                <button type="button" class="btn btn-primary"
                                     (click)="nextGame(messageEl, 1, 0)">Next</button>
                             </p>
                         </div>
                     </div>
                     <div *ngIf="option == 4" class="row">
                         <h5>Post</h5>
-                        <div class="col-sm-6">Manipulate and persuade message (I will provide it)
+                        <div class="col-sm-6">
+                            Manipulate and persuade message
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <img src="../assets/Picture45.png"
+                                        class="img-responsive center-block d-block mx-auto" align="center">
+                                </div>
+                            </div>
                             <p><button type="button" class="btn btn-primary"
                                     (click)="nextGame(messageEl, 2, 0)">Next</button>
                             </p>
@@ -572,7 +674,13 @@
                     </div>
                     <div *ngIf="option == 6" class="row">
                         <h5>Post</h5>
-                        <div class="col-sm-6">angry message (I will provide it)
+                        <div class="col-sm-6">Angry message
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <img src="../assets/Picture46.png"
+                                        class="img-responsive center-block d-block mx-auto" align="center">
+                                </div>
+                            </div>
                             <p><button type="button" class="btn btn-primary"
                                     (click)="nextGame(messageEl, 3, 0)">Next</button>
                             </p>
@@ -580,7 +688,13 @@
                     </div>
                     <div *ngIf="option == 1" class="row">
                         <h5>Post</h5>
-                        <div class="col-sm-6">Humor message (I will provide it)
+                        <div class="col-sm-6">Humor message
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <img src="../assets/Picture47.png"
+                                        class="img-responsive center-block d-block mx-auto" align="center">
+                                </div>
+                            </div>
                             <p><button type="button" class="btn btn-primary"
                                     (click)="nextGame(messageEl, 4, 0)">Next</button>
                             </p>
@@ -588,7 +702,13 @@
                     </div>
                     <div *ngIf="option == 2" class="row">
                         <h5>Post</h5>
-                        <div class="col-sm-6">A play on words message (I will provide it)
+                        <div class="col-sm-6">A play on words message
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <img src="../assets/Picture48.png"
+                                        class="img-responsive center-block d-block mx-auto" align="center">
+                                </div>
+                            </div>
                             <p><button type="button" class="btn btn-primary"
                                     (click)="nextGame(messageEl, 5, 0)">Next</button>
                             </p>
@@ -596,8 +716,13 @@
                     </div>
                     <div *ngIf="option == 3" class="row">
                         <h5>Post</h5>
-                        <div class="col-sm-6">Dry Understatement
-                            message (I will provide it)
+                        <div class="col-sm-6">Dry Understatement message
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <img src="../assets/Picture49.png"
+                                        class="img-responsive center-block d-block mx-auto" align="center">
+                                </div>
+                            </div>
                             <p><button type="button" class="btn btn-primary"
                                     (click)="nextGame(messageEl, 6, 0)">Next</button>
                             </p>
@@ -608,7 +733,21 @@
                 <span #messageEl *ngIf="check == 25" class="game-content" [attr.data-message-id]=25>
                     <div *ngIf="option == 1" class="row">
                         <h5>What are people saying about this post</h5>
-                        <div class="col-sm-6">I will provide this
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <img src="../assets/Picture50.png"
+                                        class="img-responsive center-block d-block mx-auto" align="center">
+                                </div>
+                                <div class="col-sm-6">
+                                    <img src="../assets/Picture51.png"
+                                        class="img-responsive center-block d-block mx-auto" align="center">
+                                </div>
+                                <div class="col-sm-6">
+                                    <img src="../assets/Picture52.png"
+                                        class="img-responsive center-block d-block mx-auto" align="center">
+                                </div>
+                            </div>
                             <p><button type="button" class="btn btn-primary"
                                     (click)="nextGame(messageEl, 0, 0)">Next</button>
                             </p>
@@ -616,7 +755,17 @@
                     </div>
                     <div *ngIf="option == 2" class="row">
                         <h5>What are people saying about this post</h5>
-                        <div class="col-sm-6">I will provide this
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <img src="../assets/Picture53.png"
+                                        class="img-responsive center-block d-block mx-auto" align="center">
+                                </div>
+                                <div class="col-sm-6">
+                                    <img src="../assets/Picture54.png"
+                                        class="img-responsive center-block d-block mx-auto" align="center">
+                                </div>
+                            </div>
                             <p><button type="button" class="btn btn-primary"
                                     (click)="nextGame(messageEl, 0, 0)">Next</button>
                             </p>
@@ -624,7 +773,17 @@
                     </div>
                     <div *ngIf="option == 3" class="row">
                         <h5>What are people saying about this post</h5>
-                        <div class="col-sm-6">I will provide this
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <img src="../assets/Picture55.png"
+                                        class="img-responsive center-block d-block mx-auto" align="center">
+                                </div>
+                                <div class="col-sm-6">
+                                    <img src="../assets/Picture56.png"
+                                        class="img-responsive center-block d-block mx-auto" align="center">
+                                </div>
+                            </div>
                             <p><button type="button" class="btn btn-primary"
                                     (click)="nextGame(messageEl, 0, 0)">Next</button>
                             </p>
@@ -632,7 +791,17 @@
                     </div>
                     <div *ngIf="option == 4" class="row">
                         <h5>What are people saying about this post</h5>
-                        <div class="col-sm-6">I will provide this
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <img src="../assets/Picture57.png"
+                                        class="img-responsive center-block d-block mx-auto" align="center">
+                                </div>
+                                <div class="col-sm-6">
+                                    <img src="../assets/Picture58.png"
+                                        class="img-responsive center-block d-block mx-auto" align="center">
+                                </div>
+                            </div>
                             <p><button type="button" class="btn btn-primary"
                                     (click)="nextGame(messageEl, 0, 0)">Next</button>
                             </p>
@@ -640,7 +809,17 @@
                     </div>
                     <div *ngIf="option == 5" class="row">
                         <h5>What are people saying about this post</h5>
-                        <div class="col-sm-6">I will provide this
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <img src="../assets/Picture59.png"
+                                        class="img-responsive center-block d-block mx-auto" align="center">
+                                </div>
+                                <div class="col-sm-6">
+                                    <img src="../assets/Picture60.png"
+                                        class="img-responsive center-block d-block mx-auto" align="center">
+                                </div>
+                            </div>
                             <p><button type="button" class="btn btn-primary"
                                     (click)="nextGame(messageEl, 0, 0)">Next</button>
                             </p>
@@ -648,7 +827,17 @@
                     </div>
                     <div *ngIf="option == 6" class="row">
                         <h5>What are people saying about this post</h5>
-                        <div class="col-sm-6">I will provide this
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <img src="../assets/Picture61.png"
+                                        class="img-responsive center-block d-block mx-auto" align="center">
+                                </div>
+                                <div class="col-sm-6">
+                                    <img src="../assets/Picture62.png"
+                                        class="img-responsive center-block d-block mx-auto" align="center">
+                                </div>
+                            </div>
                             <p><button type="button" class="btn btn-primary"
                                     (click)="nextGame(messageEl, 0, 0)">Next</button>
                             </p>
@@ -746,7 +935,16 @@
                                     (click)="nextGame(messageEl, 0, 0)">Negative message </button>
                             </p>
                         </div>
-                        <h5>I will provide this post</h5>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <img src="../assets/Picture63.png" class="img-responsive center-block d-block mx-auto"
+                                    align="center">
+                            </div>
+                            <div class="col-sm-6">
+                                <img src="../assets/Picture64.png" class="img-responsive center-block d-block mx-auto"
+                                    align="center">
+                            </div>
+                        </div>
                     </div>
                 </span>
                 <span #messageEl *ngIf="check == 29" class="game-content" [attr.data-message-id]=29>
@@ -767,7 +965,16 @@
                                     (click)="nextGame(messageEl, 0, 0)">Negative message </button>
                             </p>
                         </div>
-                        <h5>I will provide this post</h5>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <img src="../assets/Picture65.png" class="img-responsive center-block d-block mx-auto"
+                                    align="center">
+                            </div>
+                            <div class="col-sm-6">
+                                <img src="../assets/Picture66.png" class="img-responsive center-block d-block mx-auto"
+                                    align="center">
+                            </div>
+                        </div>
                     </div>
                 </span>
 
@@ -932,12 +1139,12 @@
                                     a celebrity</button>
                             </p>
                         </div>
-                        <div class="col-sm-4">
+                        <!-- <div class="col-sm-4">
                             <p>
                                 <button type="button" class="btn btn-danger" (click)="nextGame(messageEl, 0, 0)">Attack
                                     a big Pharma</button>
                             </p>
-                        </div>
+                        </div> -->
                     </div>
                 </span>
                 <span #messageEl *ngIf="check == 36" class="game-content" [attr.data-message-id]=36>
@@ -970,6 +1177,17 @@
                         <h4>What do people think about the pictures</h4>
                         <div class="col-sm-12">
                             <p>I will provide the reaction - you can put dummy ones for now </p>
+
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <img src="../assets/Picture67.png"
+                                        class="img-responsive center-block d-block mx-auto" align="center">
+                                </div>
+                                <div class="col-sm-3">
+                                    <img src="../assets/Picture68.png"
+                                        class="img-responsive center-block d-block mx-auto" align="center">
+                                </div>
+                            </div>
                             <button type="button" class="btn btn-primary"
                                 (click)="nextGame(messageEl, 0, 0)">Next</button>
                         </div>
@@ -1002,14 +1220,32 @@
                             <p>
                                 On the newspaper
                             </p>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <img src="../assets/Picture69.jpg"
+                                        class="img-responsive center-block d-block mx-auto" align="center">
+                                </div>
+                            </div>
                         </div>
                         <div class="col-sm-4">
                             <p>On website</p>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <img src="../assets/Picture70.png"
+                                        class="img-responsive center-block d-block mx-auto" align="center">
+                                </div>
+                            </div>
                         </div>
                         <div class="col-sm-4">
                             <p>
                                 On blogsite
                             </p>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <img src="../assets/Picture71.png"
+                                        class="img-responsive center-block d-block mx-auto" align="center">
+                                </div>
+                            </div>
                         </div>
                         <button type="button" class="btn btn-primary" (click)="nextGame(messageEl, 0, 0)">Next</button>
                     </div>
@@ -1019,6 +1255,20 @@
                         <h4>What are people saying? </h4>
                         <div class="col-sm-12">
                             <p>I will provide post of reactions…..</p>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <img src="../assets/Picture72.png"
+                                        class="img-responsive center-block d-block mx-auto" align="center">
+                                </div>
+                                <div class="col-sm-4">
+                                    <img src="../assets/Picture73.png"
+                                        class="img-responsive center-block d-block mx-auto" align="center">
+                                </div>
+                                <div class="col-sm-4">
+                                    <img src="../assets/Picture74.png"
+                                        class="img-responsive center-block d-block mx-auto" align="center">
+                                </div>
+                            </div>
                             <button type="button" class="btn btn-primary"
                                 (click)="nextGame(messageEl, 0, 0)">Next</button>
                         </div>
@@ -1060,12 +1310,24 @@
                                 <button type="button" class="btn btn-primary" (click)="nextGame(messageEl, 0, 0)">Expert
                                     post…… I will provide it.. Create a dummy one</button>
                             </p>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <img src="../assets/Picture75.png"
+                                        class="img-responsive center-block d-block mx-auto" align="center">
+                                </div>
+                            </div>
                         </div>
                         <div class="col-sm-6">
                             <p>
                                 <button type="button" class="btn btn-danger" (click)="nextGame(messageEl, 0, 0)">Think
                                     tank post…… I will provide it.. Create a dummy one</button>
                             </p>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <img src="../assets/Picture76.png"
+                                        class="img-responsive center-block d-block mx-auto" align="center">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </span>
@@ -1073,9 +1335,18 @@
                 <span #messageEl *ngIf="check == 44" class="game-content" [attr.data-message-id]=44>
                     <div class="row">
                         <h4>Believe are believing your story. What are they saying?</h4>
-
                         <div class="col-sm-12">
                             <p>I will provide reactions… </p>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <img src="../assets/Picture77.png"
+                                        class="img-responsive center-block d-block mx-auto" align="center">
+                                </div>
+                                <div class="col-sm-6">
+                                    <img src="../assets/Picture78.png"
+                                        class="img-responsive center-block d-block mx-auto" align="center">
+                                </div>
+                            </div>
                             <button style='font-size:24px' class="btn btn-primary"
                                 (click)="nextGame(messageEl, 0, 0)">Next
                                 <i class='fas fa-arrow-right'></i></button>
@@ -1110,6 +1381,12 @@
                                     <button type="button" class="btn btn-primary"
                                         (click)="nextGame(messageEl, 2, 0)">Twist reputable media messages</button>
                                 </p>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <img src="../assets/Picture80.png"
+                                            class="img-responsive center-block d-block mx-auto" align="center">
+                                    </div>
+                                </div>
                             </div>
                             <div class="col-sm-6">
                                 <p>
@@ -1117,6 +1394,12 @@
                                         (click)="nextGame(messageEl, 1, 0)">Invent message that reputable media did not
                                         report</button>
                                 </p>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <img src="../assets/Picture79.png"
+                                            class="img-responsive center-block d-block mx-auto" align="center">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="col-sm-12">
@@ -1125,6 +1408,16 @@
                                     <button type="button" class="btn btn-primary"
                                         (click)="nextGame(messageEl, 3, 0)">Attack their reporters </button>
                                 </p>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <img src="../assets/Picture81.png"
+                                            class="img-responsive center-block d-block mx-auto" align="center">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <img src="../assets/Picture82.png"
+                                            class="img-responsive center-block d-block mx-auto" align="center">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1170,6 +1463,20 @@
 
                         <div class="col-sm-12">
                             <p>I will provide this post</p>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <img src="../assets/Picture83.png"
+                                        class="img-responsive center-block d-block mx-auto" align="center">
+                                </div>
+                                <div class="col-sm-6">
+                                    <img src="../assets/Picture84.png"
+                                        class="img-responsive center-block d-block mx-auto" align="center">
+                                </div>
+                                <div class="col-sm-6">
+                                    <img src="../assets/Picture85.png"
+                                        class="img-responsive center-block d-block mx-auto" align="center">
+                                </div>
+                            </div>
                             <button style='font-size:24px' class="btn btn-primary"
                                 (click)="nextGame(messageEl, 0, 0)">Next</button>
                         </div>
@@ -1207,12 +1514,24 @@
                                     <button type="button" class="btn btn-primary"
                                         (click)="nextGame(messageEl, 1, 0)">Surgeon General of US</button>
                                 </p>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <img src="../assets/Picture8.png"
+                                            class="img-responsive center-block d-block mx-auto" align="center">
+                                    </div>
+                                </div>
                             </div>
                             <div class="col-sm-6">
                                 <p>
                                     <button type="button" class="btn btn-danger" (click)="nextGame(messageEl, 2, 0)">New
                                         York City health commissioner</button>
                                 </p>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <img src="../assets/Picture86.png"
+                                            class="img-responsive center-block d-block mx-auto" align="center">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="col-sm-12">
@@ -1221,12 +1540,24 @@
                                     <button type="button" class="btn btn-primary"
                                         (click)="nextGame(messageEl, 3, 0)">CAI Director</button>
                                 </p>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <img src="../assets/Picture87.png"
+                                            class="img-responsive center-block d-block mx-auto" align="center">
+                                    </div>
+                                </div>
                             </div>
                             <div class="col-sm-6">
                                 <p>
                                     <button type="button" class="btn btn-primary"
                                         (click)="nextGame(messageEl, 4, 0)">LAPD Police captain</button>
                                 </p>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <img src="../assets/Picture88.png"
+                                            class="img-responsive center-block d-block mx-auto" align="center">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1430,7 +1761,9 @@
                 <span #messageEl *ngIf="check == 61" class="game-content" [attr.data-message-id]=61>
                     <div class="row">
                         <div class="col-sm-12">
-                            <p>The integrity and reputation of CDC and these big pharmaceutical companies is damaged because of these news. They just hired lawyers and investigators to pursue the case. What do you want to do?</p>
+                            <p>The integrity and reputation of CDC and these big pharmaceutical companies is damaged
+                                because of these news. They just hired lawyers and investigators to pursue the case.
+                                What do you want to do?</p>
                             <button style='font-size:24px' class="btn btn-primary"
                                 (click)="nextGame(messageEl, 0, 0)">Next
                                 <i class='fas fa-arrow-right'></i></button>
